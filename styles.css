@@ -1,0 +1,338 @@
+/* 
+   HIYARA - Luxury Beauty Brand 
+   Design System: Minimal, High-Contrast, Gold & Black
+*/
+
+:root {
+    /* Colors */
+    --bg-color: #050505;
+    --bg-secondary: #0f0f0f;
+    --text-primary: #f2f2f2;
+    --text-secondary: #a0a0a0;
+    --accent-gold: #d4af37;
+    --accent-gold-dim: #8a702a;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--accent-gold);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Typography Utilities */
+.text-gold {
+    color: var(--accent-gold);
+}
+
+.text-dim {
+    color: var(--text-secondary);
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    /* Darken image for text readability */
+    filter: contrast(1.1) brightness(0.8);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: var(--spacing-md);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.brand-name {
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    /* Very wide spacing for luxury feel */
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, #f8f1d2 0%, #d4af37 50%, #8a702a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+.tagline {
+    font-size: 1.125rem;
+    font-family: var(--font-body);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsiveness */
+/* Responsiveness */
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 3rem;
+        letter-spacing: 0.2em;
+    }
+}
+
+/* Product Showcase */
+.showcase {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--accent-gold);
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    transition: transform 0.6s ease;
+    filter: brightness(0.9);
+}
+
+.product-card:hover img {
+    transform: scale(1.02);
+    filter: brightness(1);
+}
+
+/* Why Hiyara (Editorial) */
+.why-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.editorial-text {
+    max-width: 700px;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-list {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-item::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-gold-dim);
+    border-radius: 50%;
+}
+
+/* Product Details */
+.details-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--bg-secondary);
+}
+
+.details-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.details-text h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.details-list {
+    list-style: none;
+    margin-top: var(--spacing-md);
+}
+
+.details-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.details-list li span:first-child {
+    color: var(--text-primary);
+}
+
+/* Footer (Minimal) */
+footer {
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    color: #444;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+}
