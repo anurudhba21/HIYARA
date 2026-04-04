@@ -212,11 +212,18 @@ img {
 }
 
 .showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    max-width: 100vw;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.showcase-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .product-card {
@@ -224,6 +231,8 @@ img {
     text-align: left;
     display: flex;
     flex-direction: column;
+    flex: 0 0 320px;
+    scroll-snap-align: start;
 }
 
 .product-image {
