@@ -121,6 +121,7 @@ img {
     margin-bottom: var(--spacing-sm);
     background: linear-gradient(135deg, #f8f1d2 0%, #d4af37 50%, #8a702a 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0px 4px 20px rgba(212, 175, 55, 0.2);
 }
