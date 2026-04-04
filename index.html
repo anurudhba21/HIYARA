@@ -27,9 +27,16 @@
         <div class="logo"
             style="color: var(--accent-gold); font-family: var(--font-heading); letter-spacing: 0.1em; font-size: 1.5rem;">
             H</div>
-        <nav>
+        <nav style="display: flex; align-items: center; gap: 2rem;">
             <a href="#"
                 style="color: var(--text-primary); text-decoration: none; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.15em; opacity: 0.8;">Shop</a>
+            <a href="#" class="cart-icon" style="color: var(--accent-gold); display: flex; align-items: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </a>
         </nav>
     </header>
 
@@ -51,19 +58,54 @@
         <p class="section-subtitle">10-Piece Professional Set</p>
         <div class="showcase-grid">
             <div class="product-card">
-                <img src="assets/product1.png" alt="Aurum Brush 1">
+                <div class="product-image">
+                    <img src="assets/product1.png" alt="Aurum Soft-Touch Foundation Brush">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">Aurum Soft-Touch Foundation Brush</h4>
+                    <p class="product-price">$85.00</p>
+                </div>
             </div>
             <div class="product-card">
-                <img src="assets/product2.png" alt="Aurum Brush 2">
+                <div class="product-image">
+                    <img src="assets/product2.png" alt="Aurum Precision Silicon Applicator">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">Aurum Precision Silicon Applicator</h4>
+                    <p class="product-price">$65.00</p>
+                </div>
             </div>
             <div class="product-card">
-                <img src="assets/product3.png" alt="Aurum Spatulas">
+                <div class="product-image">
+                    <img src="assets/product3.png" alt="Aurum Triple-Tinge Spatula Set">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">Aurum Triple-Tinge Spatula Set</h4>
+                    <p class="product-price">$120.00</p>
+                </div>
             </div>
             <div class="product-card">
-                <img src="assets/product4.png" alt="Aurum Wand">
+                <div class="product-image">
+                    <img src="assets/product4.png" alt="Aurum Rose Gold Eye Wand">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">Aurum Rose Gold Eye Wand</h4>
+                    <p class="product-price">$95.00</p>
+                </div>
             </div>
             <div class="product-card">
-                <img src="assets/product5.png" alt="Aurum Scraper">
+                <div class="product-image">
+                    <img src="assets/product5.png" alt="Aurum Smooth Skin Scraper">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">Aurum Smooth Skin Scraper</h4>
+                    <p class="product-price">$55.00</p>
+                </div>
             </div>
         </div>
     </section>
