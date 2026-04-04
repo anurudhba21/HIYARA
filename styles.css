@@ -13,8 +13,8 @@
     --accent-gold-dim: #8a702a;
 
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -212,7 +212,7 @@ img {
 
 .showcase-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
     max-width: 1200px;
     margin: 0 auto;
@@ -288,12 +288,8 @@ img {
 }
 
 .details-container {
-    max-width: 1000px;
+    max-width: 600px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
-    align-items: center;
 }
 
 .details-text h3 {
