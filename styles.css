@@ -39,6 +39,10 @@ html {
 
 body {
     background-color: var(--bg-color);
+    background-image: url('assets/site_bg.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     color: var(--text-primary);
     font-family: var(--font-body);
     font-weight: 300;
@@ -187,7 +191,8 @@ img {
 /* Product Showcase */
 .showcase {
     padding: var(--spacing-xl) var(--spacing-md);
-    background-color: var(--bg-secondary);
+    background-color: rgba(5, 5, 5, 0.1); /* Minimally opaque to let texture shine through */
+    backdrop-filter: blur(5px);
     text-align: center;
 }
 
@@ -342,6 +347,7 @@ img {
     justify-content: center;
     overflow: hidden;
     text-align: center;
+    background-color: rgba(5, 5, 5, 0.1);
 }
 
 .story-bg {
@@ -388,10 +394,11 @@ img {
 /* Ritual Section (Minimalist Philosophy) */
 .ritual-section {
     padding: var(--spacing-xl) var(--spacing-md);
-    background-color: #0c0c0c;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
     text-align: center;
-    border-top: 1px solid #1a1a1a;
-    border-bottom: 1px solid #1a1a1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .ritual-container {
@@ -424,7 +431,8 @@ img {
 /* Pillars Section (Mission & Vision) */
 .pillars-section {
     padding: var(--spacing-xl) var(--spacing-md);
-    background: radial-gradient(circle at 50% 50%, #151515, #050505);
+    background: radial-gradient(circle at 50% 50%, rgba(21, 21, 21, 0.1), rgba(5, 5, 5, 0.2));
+    backdrop-filter: blur(5px);
 }
 
 .pillars-container {
@@ -471,7 +479,8 @@ img {
 /* Product Details */
 .details-section {
     padding: var(--spacing-xl) var(--spacing-md);
-    background-color: var(--bg-secondary);
+    background-color: rgba(5, 5, 5, 0.1);
+    backdrop-filter: blur(5px);
 }
 
 .details-container {
@@ -523,6 +532,8 @@ footer {
 
     body {
         font-size: 14px;
+        background-image: url('assets/site_bg_mobile.png');
+        background-attachment: scroll; /* Performance on mobile */
     }
 
     /* Header */
