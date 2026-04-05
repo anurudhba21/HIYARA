@@ -181,13 +181,8 @@ img {
 }
 
 /* Responsiveness */
-/* Responsiveness */
-@media (max-width: 768px) {
-    .brand-name {
-        font-size: 3rem;
-        letter-spacing: 0.2em;
-    }
-}
+/* Responsive adjustments handled in the main mobile block at the end */
+
 
 /* Product Showcase */
 .showcase {
@@ -265,11 +260,8 @@ img {
     margin-left: -24px;
 }
 
-@media (max-width: 768px) {
-    .carousel-btn {
-        display: none; /* Hide on mobile, keep native touch scroll */
-    }
-}
+/* Carousel button visibility handled in main mobile block */
+
 
 .product-card {
     position: relative;
@@ -522,8 +514,112 @@ footer {
 }
 
 /* Responsive adjustments */
+/* --- Dedicated Mobile Experience (<= 768px) --- */
 @media (max-width: 768px) {
-    .details-container {
-        grid-template-columns: 1fr;
+    :root {
+        --spacing-lg: 3rem;
+        --spacing-xl: 5rem;
     }
-}
+
+    body {
+        font-size: 14px;
+    }
+
+    /* Header */
+    header {
+        padding: 1.5rem !important;
+    }
+
+    .logo {
+        font-size: 1.25rem !important;
+    }
+
+    /* Hero */
+    .hero {
+        height: 100svh; /* Using SVH for mobile browser chrome */
+    }
+
+    .hero-bg img {
+        opacity: 0.5; /* Slightly brighter for mobile visibility */
+    }
+
+    .brand-name {
+        font-size: 3rem;
+        letter-spacing: 0.2em;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .btn-primary {
+        padding: 0.875rem 2rem;
+        font-size: 0.75rem;
+    }
+
+    /* Product Showcase */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .product-card {
+        flex: 0 0 280px; /* Slightly narrower cards for mobile */
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    /* Story Section */
+    .story-section {
+        height: auto;
+        padding: var(--spacing-xl) 0;
+    }
+
+    .story-content {
+        padding: var(--spacing-md);
+        margin: 0 1.5rem;
+    }
+
+    .editorial-heading {
+        font-size: 2.5rem;
+    }
+
+    .editorial-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* Ritual Section */
+    .ritual-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .ritual-text {
+        font-size: 1.35rem;
+    }
+
+    .ritual-accent {
+        font-size: 6rem;
+        top: -30px;
+    }
+
+    /* Pillars Section */
+    .pillars-container {
+        gap: 2rem;
+    }
+
+    .pillar-card {
+        padding: var(--spacing-md);
+        min-width: 100%;
+    }
+
+    /* Details Section */
+    .details-list li {
+        font-size: 0.85rem;
+        padding: 0.75rem 0;
+    }
+}
