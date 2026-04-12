@@ -38,11 +38,7 @@ html {
 }
 
 body {
-    background-color: var(--bg-color);
-    background-image: url('assets/site_bg.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    background-color: #000000;
     color: var(--text-primary);
     font-family: var(--font-body);
     font-weight: 300;
@@ -87,7 +83,7 @@ img {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+    background: #000000;
 }
 
 .hero-bg {
@@ -191,9 +187,28 @@ img {
 /* Product Showcase */
 .showcase {
     padding: var(--spacing-xl) var(--spacing-md);
-    background-color: rgba(5, 5, 5, 0.1); /* Minimally opaque to let texture shine through */
-    backdrop-filter: blur(5px);
+    background-image: url('assets/site_bg.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     text-align: center;
+    position: relative;
+}
+
+.showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.showcase > * {
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -347,7 +362,7 @@ img {
     justify-content: center;
     overflow: hidden;
     text-align: center;
-    background-color: rgba(5, 5, 5, 0.1);
+    background-color: #000000;
 }
 
 .story-bg {
@@ -391,48 +406,12 @@ img {
     line-height: 1.8;
 }
 
-/* Ritual Section (Minimalist Philosophy) */
-.ritual-section {
-    padding: var(--spacing-xl) var(--spacing-md);
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
 
-.ritual-container {
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.ritual-accent {
-    font-family: var(--font-heading);
-    font-size: 8rem;
-    line-height: 1;
-    color: var(--accent-gold-dim);
-    opacity: 0.3;
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
-}
-
-.ritual-text {
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    color: var(--text-primary);
-    line-height: 1.6;
-    font-style: italic;
-}
 
 /* Pillars Section (Mission & Vision) */
 .pillars-section {
     padding: var(--spacing-xl) var(--spacing-md);
-    background: radial-gradient(circle at 50% 50%, rgba(21, 21, 21, 0.1), rgba(5, 5, 5, 0.2));
-    backdrop-filter: blur(5px);
+    background: #000000;
 }
 
 .pillars-container {
@@ -479,8 +458,7 @@ img {
 /* Product Details */
 .details-section {
     padding: var(--spacing-xl) var(--spacing-md);
-    background-color: rgba(5, 5, 5, 0.1);
-    backdrop-filter: blur(5px);
+    background-color: #000000;
 }
 
 .details-container {
@@ -532,8 +510,8 @@ footer {
 
     body {
         font-size: 14px;
-        background-image: url('assets/site_bg_mobile.png');
-        background-attachment: scroll; /* Performance on mobile */
+        background-color: #000000;
+        background-image: none;
     }
 
     /* Header */
