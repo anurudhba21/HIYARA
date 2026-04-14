@@ -461,23 +461,21 @@ img {
 }
 
 .pillar-title {
-    font-size: 2.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    margin-bottom: 2rem;
-    color: #ffda44; /* Vivid luxury gold */
-    font-family: var(--font-heading);
-    font-weight: 600;
+    font-size: 3.5rem;
     font-style: italic;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-weight: 400;
 }
 
 .pillar-description {
     color: #ffffff;
-    font-size: 1.35rem;
     font-family: var(--font-heading);
-    font-weight: 400;
-    line-height: 1.6;
-    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.8;
     opacity: 0.95;
     max-width: 550px;
     margin: 0 auto;
