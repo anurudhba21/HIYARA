@@ -21,12 +21,38 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
 
     // Carousel Logic
-    const productGrid = document.getElementById('productGrid');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    const carouselDots = document.getElementById('carouselDots');
 
-    if (productGrid && prevBtn && nextBtn) {
+    if (productGrid && prevBtn && nextBtn && carouselDots) {
         const scrollAmount = 340; // Card width + gap
+        const products = productGrid.querySelectorAll('.product-card');
+        
+        // Generate dots
+        products.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                productGrid.scrollTo({
+                    left: products[i].offsetLeft - productGrid.offsetLeft,
+                    behavior: 'smooth'
+                });
+            });
+            carouselDots.appendChild(dot);
+        });
+
+        const dots = carouselDots.querySelectorAll('.dot');
+
+        // Update active dot on scroll
+        productGrid.addEventListener('scroll', () => {
+            const scrollLeft = productGrid.scrollLeft;
+            const cardWidth = products[0].offsetWidth;
+            const activeIndex = Math.round(scrollLeft / cardWidth);
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === activeIndex);
+            });
+        });
 
         prevBtn.addEventListener('click', () => {
             productGrid.scrollBy({
